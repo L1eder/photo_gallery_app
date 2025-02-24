@@ -26,7 +26,9 @@ fun DescriptionBox(currentInd: Int, modifier: Modifier = Modifier)
     )
     {
         Box(
-            modifier = Modifier.size(300.dp, 100.dp).background(Color.Green)
+            modifier = Modifier
+                .size(300.dp, 100.dp)
+                .background(Color.Gray)
         ){
             Text(descriptions[currentInd], fontSize = 25.sp)
         }

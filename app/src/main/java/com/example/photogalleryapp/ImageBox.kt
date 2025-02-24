@@ -3,8 +3,9 @@ package com.example.photogalleryapp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,7 +21,7 @@ fun ImageBox(currentInd: Int, modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center,
     ) {
         Box(
-            modifier = Modifier.size(360.dp, 480.dp),
+            modifier = Modifier.fillMaxSize().padding(20.dp),
             contentAlignment = Alignment.Center,
         ) {
             ImageSwitch(currentInd)
