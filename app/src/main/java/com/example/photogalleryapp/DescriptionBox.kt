@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -16,7 +17,7 @@ import androidx.compose.ui.unit.sp
 fun DescriptionBox(currentInd: Int, modifier: Modifier = Modifier)
 {
     val descriptions = listOf(
-        "Bkdkkkdkkk",
+         stringResource(id = R.string.photo_description_1),
         "dsdjjkjkdjskjk"
     )
     Box(
@@ -28,7 +29,8 @@ fun DescriptionBox(currentInd: Int, modifier: Modifier = Modifier)
         Box(
             modifier = Modifier
                 .size(300.dp, 100.dp)
-                .background(Color.Gray)
+                .background(Color.Gray),
+            contentAlignment = Alignment.Center,
         ){
             Text(descriptions[currentInd], fontSize = 25.sp)
         }
