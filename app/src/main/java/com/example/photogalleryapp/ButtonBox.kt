@@ -1,16 +1,19 @@
 package com.example.photogalleryapp
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
@@ -23,7 +26,6 @@ fun ButtonBox(currentInd: Int, modifier: Modifier = Modifier, onIndexChange: (In
         Row(
             modifier = modifier
                 .fillMaxWidth(),
-            //.background(Color.Blue),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
             ButtonEvent(currentInd, onIndexChange)
@@ -38,17 +40,37 @@ fun ButtonEvent(currentInd: Int, onIndexChange: (Int) -> Unit) {
         onClick = {
             val newIndex = (currentInd - 1 + 8) % 8
             onIndexChange(newIndex)
-        }
+        },
+        colors = ButtonDefaults.buttonColors(Color(0xFF5481b8)),
+        shape = RoundedCornerShape(16.dp),
+        modifier = Modifier
+            .size(150.dp,50.dp)
+            .border(1.dp, Color.Black, RoundedCornerShape(16.dp))
+            .shadow(4.dp, RoundedCornerShape(16.dp))
     ) {
-        Text("Previous", fontSize = 25.sp)
+        Text(
+            text = stringResource(id = R.string.previous_button),
+            fontSize = 20.sp,
+            style = MaterialTheme.typography.bodyLarge
+        )
     }
 
     Button(
         onClick = {
             val newIndex = (currentInd + 1) % 8
             onIndexChange(newIndex)
-        }
+        },
+        colors = ButtonDefaults.buttonColors(Color(0xFF5481b8)),
+        shape = RoundedCornerShape(16.dp),
+        modifier = Modifier
+            .size(150.dp,50.dp)
+            .border(1.dp, Color.Black, RoundedCornerShape(16.dp))
+            .shadow(4.dp, RoundedCornerShape(16.dp))
     ) {
-        Text("Next", fontSize = 25.sp)
+        Text(
+            text = stringResource(id = R.string.next_button),
+            fontSize = 20.sp,
+            style = MaterialTheme.typography.bodyLarge
+        )
     }
 }
