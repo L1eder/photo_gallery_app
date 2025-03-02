@@ -23,12 +23,12 @@ fun MainScreen(){
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
-                .fillMaxSize()
                 .padding(innerPadding)
         )
         {
+            NameBox(modifier = Modifier.weight(0.8f))
             ImageBox(currentInd, modifier = Modifier.weight(6f))
-            DescriptionBox(currentInd, modifier = Modifier.weight(2f))
+            DescriptionBox(currentInd, modifier = Modifier.weight(1.5f))
             ButtonBox(currentInd, modifier = Modifier.weight(1f)) { newIndex ->
                 currentInd = newIndex
             }

@@ -36,7 +36,7 @@ fun ButtonBox(currentInd: Int, modifier: Modifier = Modifier, onIndexChange: (In
 fun ButtonEvent(currentInd: Int, onIndexChange: (Int) -> Unit) {
     Button(
         onClick = {
-            val newIndex = (currentInd - 1 + 2) % 2
+            val newIndex = (currentInd - 1 + 8) % 8
             onIndexChange(newIndex)
         }
     ) {
@@ -45,7 +45,7 @@ fun ButtonEvent(currentInd: Int, onIndexChange: (Int) -> Unit) {
 
     Button(
         onClick = {
-            val newIndex = (currentInd + 1) % 2
+            val newIndex = (currentInd + 1) % 8
             onIndexChange(newIndex)
         }
     ) {

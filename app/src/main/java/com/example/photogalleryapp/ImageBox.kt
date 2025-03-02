@@ -21,7 +21,7 @@ fun ImageBox(currentInd: Int, modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center,
     ) {
         Box(
-            modifier = Modifier.fillMaxSize().padding(20.dp),
+            modifier = Modifier.padding(20.dp).border(1.dp, Color.Black),
             contentAlignment = Alignment.Center,
         ) {
             ImageSwitch(currentInd)
@@ -32,14 +32,20 @@ fun ImageBox(currentInd: Int, modifier: Modifier = Modifier) {
 @Composable
 fun ImageSwitch(currentInd: Int) {
     val images = listOf(
-        R.drawable.test_img,
-        R.drawable.test_img2,
-    )
+        R.drawable.img1,
+        R.drawable.img2,
+        R.drawable.img3,
+        R.drawable.img4,
+        R.drawable.img5,
+        R.drawable.img6,
+        R.drawable.img7,
+        R.drawable.img8,
+        )
     Image(
         painter = painterResource(id = images[currentInd]),
         contentDescription = "Hz",
         modifier = Modifier
-            .border(10.dp, Color.White)
+            .border(15.dp, Color.White)
             .shadow(4.dp)
     )
 }
